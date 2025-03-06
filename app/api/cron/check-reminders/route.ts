@@ -6,15 +6,15 @@ const prisma = new PrismaClient()
 
 // This route will be called by a scheduled job (e.g., Vercel Cron)
 export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url)
+  const token = searchParams.get("token")
+  const cronSecret = process.env.CRON_SECRET
+
+  if (!cronSecret || token !== cronSecret) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+  }
+
   try {
-    // Verify the request is authorized (using a secret token)
-    const { searchParams } = new URL(request.url)
-    const token = searchParams.get("token")
-
-    if (token !== process.env.CRON_SECRET) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-    }
-
     // Get current date
     const now = new Date()
 
@@ -70,7 +70,7 @@ export async function GET(request: Request) {
     })
   } catch (error) {
     console.error("Error checking reminders:", error)
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 })
+    return NextResponse.json({ error: "Failed to check reminders" }, { status: 500 })
   }
 }
 
