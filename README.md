@@ -36,8 +36,8 @@ Job Tracker is a comprehensive web application designed to help job seekers orga
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/job-trackerV2.git
-   cd job-trackerV2
+   git clone https://github.com/yourusername/job-tracker.git
+   cd job-tracker
    ```
 
 2. Install dependencies:
@@ -83,7 +83,7 @@ Job Tracker is a comprehensive web application designed to help job seekers orga
 ## 📊 Project Structure
 
 ```
-job-trackerV2/
+job-tracker/
 ├── app/                  # Next.js app directory
 │   ├── api/              # API routes
 │   ├── auth/             # Authentication pages
