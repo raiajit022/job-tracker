@@ -2,7 +2,7 @@
 
 ## 📋 Overview
 
-Job Tracker is a comprehensive web application designed to help job seekers organize and monitor their job application process. Built with Next.js, TypeScript, and Prisma, it offers a robust system for tracking job applications from wishlist to acceptance.
+Job Tracker is a comprehensive web application designed to help job seekers organise and monitor their job application process. Built with Next.js, TypeScript, and Prisma, it offers a robust system for tracking job applications from wishlist to acceptance.
 
 ## ✨ Features
 
